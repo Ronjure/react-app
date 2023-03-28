@@ -36,3 +36,15 @@
     transform: rotate(360deg);
   }
 }
+
+.card-wrapper {
+  display: grid;
+  grid-template-columns: 40vw 40vw;
+  column-gap: 50px;
+  justify-content: center;
+  align-items: center;
+}
+
+.ant-card-body {
+  height: 500px;
+}

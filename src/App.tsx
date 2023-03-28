@@ -1,6 +1,6 @@
 import './App.css';
 import React from 'react';
-import { Card, Space } from 'antd';
+import { Card } from 'antd';
 
 import {
   createBrowserRouter,
@@ -9,7 +9,7 @@ import {
 
 import ErrorPage from './routes/errorPage';
 import RouterCard from './pages/routerCard'
-import FirstLevel from './pages/router/firstLevel';
+import First from './pages/router/first';
 
 
 const router = createBrowserRouter([
@@ -17,11 +17,13 @@ const router = createBrowserRouter([
     path: "/",
     element: <RouterCard />,
     errorElement: <ErrorPage />,
-  },
-  {
-    path: "/first",
-    element: <FirstLevel />,
-    errorElement: <ErrorPage />,
+    children: [
+      {
+        path: "/first",
+        element: <First />,
+        errorElement: <ErrorPage />,
+      },
+    ],
   },
 ]);
 
@@ -29,17 +31,17 @@ function App() {
   return (
     <div className="App">
       <h1>
-        React 及 react-router, redux 使用示例。
+        React 及 react-router, redux 学习日记。
       </h1>
 
-      <Space>
+      <div className='card-wrapper'>
         <Card title="路由跳转示例">
           <RouterProvider router={router} />
         </Card>
         <Card title="组件间通信">
           <div>卡片内容</div>
         </Card>
-      </Space>
+      </div>
     </div>
   );
 }
