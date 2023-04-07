@@ -1,12 +1,14 @@
 import { Layout } from "antd";
 import { Outlet } from "react-router-dom";
 
+import Menus from "./menus/menus";
+
 const { Header, Sider, Content, Footer } = Layout
 
 const headerStyle: React.CSSProperties = {
   textAlign: 'center',
-  color: '#fff',
   height: '10vh',
+  color: '#fff',
   paddingInline: 50,
   lineHeight: '64px',
   backgroundColor: '#587987',
@@ -14,15 +16,14 @@ const headerStyle: React.CSSProperties = {
 
 const contentStyle: React.CSSProperties = {
   textAlign: 'center',
-  height: '80vh',
-  lineHeight: '120px',
-  backgroundColor: '#558f97',
+  height: '90vh',
+  backgroundColor: '#e5e5e5',
 };
 
 const siderStyle: React.CSSProperties = {
   textAlign: 'center',
-  height: '80vh',
-  backgroundColor: '#4a8080',
+  height: '90vh',
+  backgroundColor: '#c8d0d0',
 };
 
 const footerStyle: React.CSSProperties = {
@@ -38,11 +39,13 @@ export function CustomLayout () {
       React 基础学习项目。
     </Header>
     <Layout>
-      <Sider style={siderStyle}>Sider</Sider>
+      <Sider style={siderStyle}>
+        <Menus />
+      </Sider>
       <Content style={contentStyle}>
         <Outlet />
       </Content>
     </Layout>
-    <Footer style={footerStyle}>Footer</Footer>
+    {/* <Footer style={footerStyle}>Footer</Footer> */}
   </Layout>)
 }

@@ -1,12 +1,14 @@
-import { useRouteError } from "react-router-dom";
+import { Button, Empty } from "antd";
+import { useNavigate } from "react-router-dom";
 
 export default function ErrorPage() {
-  const error = useRouteError() as { message: string }
+  const navigate = useNavigate()
 
   return (
     <div>
-      <h1>页面找不到了……</h1>
-      <span>{error.message}</span>
+      <Empty description="您要访问的页面不存在！">
+        <Button type="primary" onClick={() => navigate('/')}>返回主页</Button>
+      </Empty>
     </div>
   )
 }
