@@ -1,7 +1,7 @@
 export function ReduxBasic() {
   return (
     <div>
-      这里是Redux basic页面。
+      Redux 基本用法。 // TODO
     </div>
   )
 }

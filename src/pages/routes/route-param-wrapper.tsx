@@ -1,13 +1,21 @@
 import { Button, Input, Card } from "antd";
 import { useState } from "react";
-import { Outlet, useNavigate } from "react-router-dom";
+import { Outlet, useNavigate, useParams, useSearchParams } from "react-router-dom";
 import { PlusOutlined, DeleteOutlined } from '@ant-design/icons'
 
 export default function RouteParamWrapper() {
   const navigate = useNavigate()
-  const [param, setParam] = useState('')
+  const params = useParams()
+  const [searchParams] = useSearchParams()
 
-  const [querys, setQuerys] = useState([{ key: '', value: '' }])
+  const [param, setParam] = useState(params?.param || '')
+
+  const initQuerys = [] as { key: string, value: string }[]
+  searchParams?.forEach((value, key) => {
+    initQuerys.push({ key, value })
+  })
+
+  const [querys, setQuerys] = useState(initQuerys?.length ? initQuerys : [{ key: '', value: '' }])
 
   const handleParamChange = e => {
     setParam(e.target.value)

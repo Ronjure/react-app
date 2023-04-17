@@ -1,42 +1,43 @@
 import { Layout } from "antd";
+import Link from "antd/es/typography/Link";
 import { Outlet } from "react-router-dom";
+
+import { ReactComponent as Github } from "../assets/github.svg";
 
 import Menus from "./menus/menus";
 
-const { Header, Sider, Content, Footer } = Layout
+const { Header, Sider, Content } = Layout
 
 const headerStyle: React.CSSProperties = {
-  textAlign: 'center',
   height: '10vh',
-  color: '#fff',
-  paddingInline: 50,
-  lineHeight: '64px',
-  backgroundColor: '#587987',
+  color: '#000',
+  backgroundColor: '#c8d0d0',
+  display: 'flex',
+  justifyContent: 'space-between',
+  alignItems: 'center',
 };
 
 const contentStyle: React.CSSProperties = {
   textAlign: 'center',
   height: '90vh',
-  backgroundColor: '#e5e5e5',
+  backgroundColor: '#f1f5f9',
 };
 
 const siderStyle: React.CSSProperties = {
   textAlign: 'center',
   height: '90vh',
-  backgroundColor: '#c8d0d0',
-};
-
-const footerStyle: React.CSSProperties = {
-  textAlign: 'center',
-  color: '#fff',
-  height: '10vh',
-  backgroundColor: '#587987',
+  backgroundColor: '#d5d6da',
 };
 
 export function CustomLayout () {
   return (<Layout>
     <Header style={headerStyle}>
-      React 基础学习项目。
+      <h1>
+        学习使用react、react-router、react-redux开发的小项目。
+      </h1>
+      <Link href="https://github.com/Ronjure/react-app" target="_blank">
+        <Github />
+      </Link>
     </Header>
     <Layout>
       <Sider style={siderStyle}>
