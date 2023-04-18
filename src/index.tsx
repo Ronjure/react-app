@@ -7,12 +7,17 @@ import reportWebVitals from './reportWebVitals';
 import zhCN from 'antd/locale/zh_CN';
 import { ConfigProvider } from 'antd';
 
+import store from './store';
+import { Provider } from 'react-redux';
+
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
   <React.StrictMode>
-    <ConfigProvider locale={zhCN}>
-      <App />
-    </ConfigProvider>
+    <Provider store={store}>
+      <ConfigProvider locale={zhCN}>
+        <App />
+      </ConfigProvider>
+    </Provider>
   </React.StrictMode>
 );
 
