@@ -8,6 +8,9 @@ import { ReduxPage } from "../pages/redux-page";
 import { ReduxBasic } from "../pages/redux/redux-basic";
 import RouteParamWrapper from "../pages/routes/route-param-wrapper";
 import RouteParams from "../pages/routes/route-params";
+import Markdown from "../pages/markdown/index";
+import MarkdownEditor from "../pages/markdown/editor";
+import MarkdownViewer from "../pages/markdown/viewer";
 
 export const router = createBrowserRouter([
   {
@@ -55,6 +58,22 @@ export const router = createBrowserRouter([
             path: '/redux/basic',
             element: <ReduxBasic />
           }
+        ],
+      },
+
+      {
+        path: '/markdown',
+        element: <Markdown />,
+
+        children: [
+          {
+            path: '/markdown/editor',
+            element: <MarkdownEditor />,
+          },
+          {
+            path: '/markdown/viewer',
+            element: <MarkdownViewer />
+          },
         ],
       },
     ],

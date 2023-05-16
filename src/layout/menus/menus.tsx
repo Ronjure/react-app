@@ -51,6 +51,20 @@ export default function Menus() {
           key: '/redux/basic',
         }
       ],
+    },
+    {
+      label: 'markdown',
+      key: '/markdown',
+      children: [
+        {
+          label: 'markdown编辑',
+          key: '/markdown/editor',
+        },
+        {
+          label: 'markdown查看',
+          key: '/markdown/viewer',
+        }
+      ],
     }
   ]
   const [defaultSelectedKey, defaultOpenKeys] = getMatchKey(longestRoute, menuItems)

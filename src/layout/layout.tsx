@@ -33,7 +33,7 @@ export function CustomLayout () {
   return (<Layout>
     <Header style={headerStyle}>
       <h1>
-        学习使用react、react-router、react-redux开发的小项目。
+        学习使用 React 的小项目。
       </h1>
       <Link href="https://github.com/Ronjure/react-app" target="_blank">
         <Github />
